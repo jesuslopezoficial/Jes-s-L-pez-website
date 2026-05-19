@@ -151,7 +151,7 @@ export default function LibrosPage() {
               <span className="text-4xl block mb-4">✍️</span>
               <p className="text-[#6b7280]">En proceso de escritura...</p>
               <a
-                href="https://www.instagram.com/jesuslopezoficial"
+                href="https://www.instagram.com/101mobilebarbershop"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-4 text-[#C9A227] text-sm font-medium hover:text-[#F5D16A] transition-colors"

@@ -112,7 +112,7 @@ export default function ContactoPage() {
                   </a>
 
                   <a
-                    href="https://www.instagram.com/jesuslopezoficial"
+                    href="https://www.instagram.com/101mobilebarbershop"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-5 rounded-xl bg-[#111] border border-[#2a2a2a] hover:border-pink-500/30 transition-all group"

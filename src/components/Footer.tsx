@@ -35,7 +35,7 @@ export default function Footer() {
             {/* Social */}
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="https://www.instagram.com/jesuslopezoficial"
+                href="https://www.instagram.com/101mobilebarbershop"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center text-[#6b7280] hover:text-[#C9A227] hover:border-[#C9A227] transition-all"

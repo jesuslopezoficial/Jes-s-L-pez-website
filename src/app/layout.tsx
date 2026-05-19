@@ -85,7 +85,7 @@ const personSchema = {
   url: "https://jesuslopez.com",
   image: "https://jesuslopez.com/jesus-lopez.jpg",
   sameAs: [
-    "https://www.instagram.com/jesuslopezoficial",
+    "https://www.instagram.com/101mobilebarbershop",
     "https://www.tiktok.com/@101mobilebarbershop",
     "https://www.facebook.com/jesuslopezoficial",
   ],
