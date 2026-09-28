@@ -283,20 +283,80 @@ export default function AcademiaPage() {
               masterclass gratuita de 101 Barber Academy.
             </p>
 
-            <div className="border border-[#C9A227]/40 bg-[#111] p-8">
-              <p className="text-white font-bold text-xl mb-3">
-                REGISTRO A LA MASTERCLASS
-              </p>
+            <form
+  action="/api/academia"
+  method="POST"
+  className="border border-[#C9A227]/40 bg-[#111] p-8 text-left"
+>
+  <p className="text-white font-bold text-xl mb-6 text-center">
+    REGISTRO A LA MASTERCLASS
+  </p>
 
-              <p className="text-[#a3a3a3] mb-6">
-                El formulario de registro estará disponible aquí.
-              </p>
+  <div className="grid sm:grid-cols-2 gap-4">
+    <input
+      type="text"
+      name="nombre"
+      placeholder="Nombre completo"
+      required
+      className="w-full bg-black border border-white/20 px-4 py-3 text-white"
+    />
 
-              <div className="inline-flex px-8 py-4 bg-[#C9A227] text-black font-bold">
-                REGISTRO PRÓXIMAMENTE
-              </div>
-            </div>
+    <input
+      type="tel"
+      name="telefono"
+      placeholder="Teléfono / WhatsApp"
+      required
+      className="w-full bg-black border border-white/20 px-4 py-3 text-white"
+    />
 
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+      className="w-full bg-black border border-white/20 px-4 py-3 text-white"
+    />
+
+    <input
+      type="text"
+      name="ciudad"
+      placeholder="Ciudad"
+      required
+      className="w-full bg-black border border-white/20 px-4 py-3 text-white"
+    />
+  </div>
+
+  <select
+    name="nivel"
+    required
+    className="w-full mt-4 bg-black border border-white/20 px-4 py-3 text-white"
+    defaultValue=""
+  >
+    <option value="" disabled>
+      Nivel de experiencia
+    </option>
+    <option value="Principiante">Principiante — quiero aprender desde cero</option>
+    <option value="Barbero">Ya soy barbero — quiero mejorar mi técnica</option>
+  </select>
+
+  <textarea
+    name="objetivo"
+    placeholder="¿Qué te gustaría aprender o mejorar?"
+    rows={4}
+    className="w-full mt-4 bg-black border border-white/20 px-4 py-3 text-white"
+  />
+
+  <button
+    type="submit"
+    className="w-full mt-6 px-8 py-4 bg-[#C9A227] text-black font-bold hover:opacity-90"
+  >
+    RESERVAR MI LUGAR GRATIS
+  </button>
+
+  <p className="text-[#a3a3a3] text-sm text-center mt-4">
+    Masterclass gratuita · 20 de octubre de 2026 · En vivo
+  </p>
+</form>
           </div>
         </section>
 
