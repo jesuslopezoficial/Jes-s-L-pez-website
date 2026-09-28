@@ -2,8 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const formData = await req.formData();
 
+const body = {
+  nombre: formData.get("nombre")?.toString() || "",
+  telefono: formData.get("telefono")?.toString() || "",
+  email: formData.get("email")?.toString() || "",
+  ciudad: formData.get("ciudad")?.toString() || "",
+  nivel: formData.get("nivel")?.toString() || "",
+  objetivo: formData.get("objetivo")?.toString() || "",
+};
     const {
       nombre,
       telefono,
