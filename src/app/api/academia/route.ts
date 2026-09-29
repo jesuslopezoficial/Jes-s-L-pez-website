@@ -139,8 +139,7 @@ const body = {
       },
 
       body: JSON.stringify({
-        from: "<noreply@jesuslopezoficial.com",
-        to: ["jesuslopezcruz3004@gmail.com"],
+        from: "noreply@jesuslopezoficial.com",        to: ["jesuslopezcruz3004@gmail.com"],
         subject: `🎓 101 Barber Academy — ${nombre}`,
         html: htmlBody,
         reply_to: email,
