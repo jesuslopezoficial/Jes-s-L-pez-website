@@ -1,8 +1,39 @@
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
 export default function AcademiaPage() {
-  return (
+const [enviado, setEnviado] = useState(false);
+const [enviando, setEnviando] = useState(false);
+const [error, setError] = useState("");
+
+async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+
+  setEnviando(true);
+  setError("");
+
+  const formData = new FormData(e.currentTarget);
+
+  try {
+    const response = await fetch("/api/academia", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error("No se pudo enviar el registro");
+    }
+
+    setEnviado(true);
+    e.currentTarget.reset();
+  } catch {
+    setError("Hubo un problema. Inténtalo nuevamente.");
+  } finally {
+    setEnviando(false);
+  }
+}  return (
     <>
       <Header />
 
@@ -284,9 +315,8 @@ export default function AcademiaPage() {
             </p>
 
             <form
-  action="/api/academia"
-  method="POST"
-  className="border border-[#C9A227]/40 bg-[#111] p-8 text-left"
+onSubmit={handleSubmit}
+className="border border-[#C9A227]/40 bg-[#111] p-8 text-left"
 >
   <p className="text-white font-bold text-xl mb-6 text-center">
     REGISTRO A LA MASTERCLASS
@@ -351,8 +381,25 @@ export default function AcademiaPage() {
     className="w-full mt-6 px-8 py-4 bg-[#C9A227] text-black font-bold hover:opacity-90"
   >
     RESERVAR MI LUGAR GRATIS
-  </button>
+  </button>{enviado && (
+  <div className="mt-6 border border-[#C9A227] bg-black p-5 text-center">
+    <p className="text-[#C9A227] text-xl font-bold">
+      🎓 ¡REGISTRO RECIBIDO!
+    </p>
+    <p className="text-white mt-2">
+      Gracias por registrarte a la Masterclass de 101 Barber Academy.
+    </p>
+    <p className="text-[#a3a3a3] mt-1">
+      Te contactaremos con la información de acceso.
+    </p>
+  </div>
+)}
 
+{error && (
+  <p className="mt-4 text-center text-red-400">
+    {error}
+  </p>
+)}
   <p className="text-[#a3a3a3] text-sm text-center mt-4">
     Masterclass gratuita · 20 de octubre de 2026 · En vivo
   </p>
