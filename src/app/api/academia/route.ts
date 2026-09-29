@@ -139,7 +139,7 @@ const body = {
       },
 
       body: JSON.stringify({
-        from: "Jesus López <noreply@jesuslopezoficial.com",
+        from: "<noreply@jesuslopezoficial.com",
         to: ["jesuslopezcruz3004@gmail.com"],
         subject: `🎓 101 Barber Academy — ${nombre}`,
         html: htmlBody,
