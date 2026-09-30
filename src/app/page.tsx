@@ -427,6 +427,79 @@ export default function HomePage() {
           </div>
         </section>
 
+              {/* 101 BARBER ACADEMY */}
+      <section className="relative py-24 overflow-hidden border-y border-[#C9A227]/20">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#C9A227]/10 via-transparent to-transparent pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            <div>
+              <div className="inline-flex items-center gap-2 text-[#C9A227] text-sm font-medium uppercase tracking-widest mb-6">
+                <span className="w-8 h-px bg-[#C9A227]" />
+                101 Barber Academy
+              </div>
+
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                Aprende el oficio que
+                <span className="text-gold-gradient"> cambió mi vida.</span>
+              </h2>
+
+              <p className="text-lg text-[#a3a3a3] leading-relaxed mb-8 max-w-xl">
+                No necesitas empezar siendo bueno. Necesitas empezar correctamente.
+                Aprende barbería desde cero, domina los fundamentos y construye una
+                técnica profesional paso a paso.
+              </p>
+
+              <Link
+                href="/academia"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9A227] text-black font-bold rounded-lg hover:bg-[#d8b43a] transition-all"
+              >
+                Conoce 101 Barber Academy
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            <div className="grid gap-4">
+              <div className="p-6 rounded-2xl bg-[#111] border border-[#2a2a2a]">
+                <p className="text-[#C9A227] text-sm font-semibold uppercase tracking-wider mb-2">
+                  01 · Fundamentos
+                </p>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Empieza correctamente
+                </h3>
+                <p className="text-[#8a8a8a]">
+                  Herramientas, higiene, manejo de máquina, palanca, guardas y
+                  numeración.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-[#111] border border-[#2a2a2a]">
+                <p className="text-[#C9A227] text-sm font-semibold uppercase tracking-wider mb-2">
+                  02 · Técnica
+                </p>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Aprende a construir un corte
+                </h3>
+                <p className="text-[#8a8a8a]">
+                  Guías, transiciones, blending, fades y cortes completos explicados
+                  paso a paso.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-[#111] border border-[#C9A227]/40">
+                <p className="text-[#C9A227] text-sm font-semibold uppercase tracking-wider mb-2">
+                  Tu objetivo
+                </p>
+                <h3 className="text-2xl font-bold text-white">
+                  De cero → a tus primeros cortes.
+                </h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
         {/* BLOG PREVIEW */}
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
