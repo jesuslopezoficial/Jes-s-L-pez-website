@@ -100,28 +100,25 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C9A227]/30 bg-[#C9A227]/10 mb-8">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A227] animate-pulse" />
-                  <span className="text-xs font-medium text-[#C9A227] uppercase tracking-widest">
-                    Transformación Masculina
-                  </span>
-                </div>
+<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C9A227]/30 bg-[#C9A227]/5 mb-6">
+  <span className="w-2 h-2 rounded-full bg-[#C9A227] animate-pulse" />
+  <span className="text-xs font-medium text-[#C9A227] uppercase tracking-widest">
+    Crecimiento Personal · Disciplina · Liderazgo
+  </span>
+</div>
 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                  <span className="text-white">Conviértete en</span>
-                  <br />
-                  <span className="text-gold-gradient">la mejor versión</span>
-                  <br />
-                  <span className="text-white">de ti mismo</span>
-                </h1>
+<h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+  <span className="text-white">Construye al hombre</span>
+  <br />
+  <span className="text-gold-gradient">que quieres llegar a ser.</span>
+</h1>
 
-                <p className="text-lg text-[#a3a3a3] leading-relaxed mb-8 max-w-lg">
-                  Soy Jesus López. De trabajo de campo a construir mi propio camino —
-                  dejé el alcohol, construí un negocio desde cero y escribí un libro.
-                  Hoy ayudo a hombres como tú a transformar su{" "}
-                  <strong className="text-white">imagen, disciplina y mentalidad.</strong>
-                </p>
-
+<p className="text-lg text-[#a3a3a3] leading-relaxed mb-8 max-w-lg">
+  Soy Jesús López. Mi historia comenzó trabajando en el campo y me llevó a
+  construir mi propio negocio, convertirme en autor y transformar mi vida a
+  través de la disciplina. Hoy comparto las herramientas y principios que me
+  ayudaron a cambiar mi camino para ayudar a otros a construir el suyo.
+</p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/contacto"
