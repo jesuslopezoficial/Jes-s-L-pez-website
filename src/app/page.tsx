@@ -120,24 +120,22 @@ export default function HomePage() {
   ayudaron a cambiar mi camino para ayudar a otros a construir el suyo.
 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/contacto"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C9A227] text-black font-bold rounded-full hover:bg-[#F5D16A] transition-all gold-glow text-base"
-                  >
-                    Empieza tu Transformación
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                  <Link
-                    href="/libros"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#2a2a2a] text-white font-medium rounded-full hover:border-[#C9A227]/50 hover:bg-[#111] transition-all text-base"
-                  >
-                    Ver mi Libro
-                  </Link>
-                </div>
+  <Link
+    href="/sobre-mi"
+    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C9A227] text-black font-bold rounded-lg hover:bg-[#d8b43a] transition-all"
+  >
+    Conoce mi Historia
+    <span aria-hidden="true">→</span>
+  </Link>
 
-                {/* Social proof mini */}
+  <Link
+    href="/libros"
+    className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#C9A227] text-[#C9A227] font-bold rounded-lg hover:bg-[#C9A227]/10 transition-all"
+  >
+    Responsabilidad Antes del Éxito
+    <span aria-hidden="true">→</span>
+  </Link>
+</div>
                 <div className="flex items-center gap-4 mt-10">
                   <div className="flex -space-x-2">
                     {["H", "R", "M", "J"].map((letter, i) => (
