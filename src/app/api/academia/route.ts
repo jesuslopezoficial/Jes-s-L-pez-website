@@ -157,6 +157,93 @@ const body = {
       );
     }
 
+    const studentEmailHtml = `
+<!DOCTYPE html>
+<html>
+  <body style="margin:0;padding:0;background:#0b0b0b;font-family:Arial,sans-serif;">
+    <div style="max-width:600px;margin:0 auto;padding:30px 20px;">
+      
+      <div style="background:#C9A227;padding:30px;text-align:center;">
+        <div style="font-size:42px;">🎓</div>
+        <h1 style="margin:10px 0 5px;color:#000;font-size:30px;">
+          ¡TU LUGAR ESTÁ RESERVADO!
+        </h1>
+        <p style="margin:0;color:#000;font-size:18px;">
+          101 BARBER ACADEMY
+        </p>
+      </div>
+
+      <div style="background:#111;border:1px solid #C9A227;padding:35px;color:#fff;">
+        <p style="font-size:20px;margin-top:0;">
+          Hola <strong>${nombre}</strong>,
+        </p>
+
+        <p style="color:#d4d4d4;line-height:1.7;">
+          Gracias por registrarte a la Masterclass gratuita de
+          <strong style="color:#fff;">101 Barber Academy.</strong>
+        </p>
+
+        <p style="color:#d4d4d4;line-height:1.7;">
+          Tu registro ha sido recibido correctamente y tu lugar está reservado.
+        </p>
+
+        <div style="margin:30px 0;padding:22px;border:1px solid #C9A227;text-align:center;">
+          <p style="color:#C9A227;font-weight:bold;margin:0 0 10px;">
+            MASTERCLASS GRATUITA
+          </p>
+
+          <p style="font-size:22px;font-weight:bold;margin:0;color:#fff;">
+            20 DE OCTUBRE DE 2026
+          </p>
+
+          <p style="color:#d4d4d4;margin:8px 0 0;">
+            EN VIVO
+          </p>
+        </div>
+
+        <p style="color:#d4d4d4;line-height:1.7;">
+          Próximamente recibirás los detalles de acceso y la información necesaria para conectarte a la clase.
+        </p>
+
+        <p style="margin-top:30px;color:#fff;">
+          Nos vemos en la Masterclass.
+        </p>
+
+        <p style="color:#C9A227;font-weight:bold;">
+          Jesús López<br />
+          101 Barber Academy
+        </p>
+      </div>
+
+      <div style="padding:20px;text-align:center;color:#777;font-size:12px;">
+        Aprende. Practica. Corrige. Domina.
+      </div>
+
+    </div>
+  </body>
+</html>
+`;
+
+const studentEmailResponse = await fetch("https://api.resend.com/emails", {
+  method: "POST",
+
+  headers: {
+    Authorization: `Bearer ${RESEND_API_KEY}`,
+    "Content-Type": "application/json",
+  },
+
+  body: JSON.stringify({
+    from: "101 Barber Academy <noreply@jesuslopezoficial.com>",
+    to: [email],
+    subject: "🎓 ¡Tu lugar está reservado! — 101 Barber Academy",
+    html: studentEmailHtml,
+  }),
+});
+
+if (!studentEmailResponse.ok) {
+  const studentEmailError = await studentEmailResponse.text();
+  console.error("Student confirmation email error:", studentEmailError);
+}
     return NextResponse.json({
       ok: true,
       message: "Registro recibido",
