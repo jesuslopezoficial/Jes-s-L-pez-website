@@ -10,6 +10,7 @@ const footerLinks = {
   recursos: [
     { href: "/blog", label: "Blog" },
     { href: "/contacto", label: "Contacto" },
+    { href: "/privacidad", label: "Aviso de Privacidad" },
     { href: "/en", label: "English Version" },
   ],
 };

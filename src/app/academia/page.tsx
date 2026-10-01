@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { MASTERCLASS_DATE } from "@/lib/academia";
 
 export default function AcademiaPage() {
   const [enviado, setEnviado] = useState(false);
@@ -75,7 +76,7 @@ export default function AcademiaPage() {
                 MASTERCLASS GRATUITA EN VIVO
               </p>
               <p className="text-2xl md:text-3xl font-black mt-2">
-                20 DE OCTUBRE DE 2026
+                {MASTERCLASS_DATE.toUpperCase()}
               </p>
             </div>
 
@@ -188,7 +189,7 @@ export default function AcademiaPage() {
 
             <div className="text-center mt-10">
               <p className="font-black text-xl">
-                20 DE OCTUBRE DE 2026 • EN VIVO
+                {MASTERCLASS_DATE.toUpperCase()} • EN VIVO
               </p>
 
               <a
@@ -594,7 +595,7 @@ export default function AcademiaPage() {
                 ],
                 [
                   "¿La Masterclass tiene costo?",
-                  "No. La Masterclass del 20 de octubre de 2026 es gratuita.",
+                  `No. La Masterclass del ${MASTERCLASS_DATE} es gratuita.`,
                 ],
                 [
                   "¿La Masterclass será presencial?",
@@ -656,7 +657,7 @@ export default function AcademiaPage() {
                 </h3>
 
                 <p className="text-[#a3a3a3] mt-2">
-                  20 de octubre de 2026 • En vivo
+                  {MASTERCLASS_DATE} • En vivo
                 </p>
               </div>
 
@@ -818,7 +819,7 @@ export default function AcademiaPage() {
                   </p>
 
                   <p className="font-bold mt-4">
-                    20 DE OCTUBRE DE 2026 • EN VIVO
+                    {MASTERCLASS_DATE.toUpperCase()} • EN VIVO
                   </p>
                 </div>
               )}
