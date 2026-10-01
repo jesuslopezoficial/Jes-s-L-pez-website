@@ -13,27 +13,27 @@ export const metadata: Metadata = {
 const bookSchema = {
   "@context": "https://schema.org",
   "@type": "Book",
-  "@id": "https://jesuslopez.com/libros/responsabilidad-antes-del-exito#book",
+  "@id": "https://jesuslopezoficial.com/libros/responsabilidad-antes-del-exito#book",
   name: "Responsabilidad antes del Éxito",
   author: {
     "@type": "Person",
-    "@id": "https://jesuslopez.com/#person",
+    "@id": "https://jesuslopezoficial.com/#person",
     name: "Jesus López",
   },
   inLanguage: "es",
   genre: ["Self-help", "Personal Development", "Masculinity"],
   description:
     "El libro que todo hombre debe leer antes de buscar el éxito. Jesus López destila su transformación personal en un manual práctico de responsabilidad, disciplina y mentalidad masculina.",
-  url: "https://jesuslopez.com/libros/responsabilidad-antes-del-exito",
+  url: "https://jesuslopezoficial.com/libros/responsabilidad-antes-del-exito",
 };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://jesuslopez.com" },
-    { "@type": "ListItem", position: 2, name: "Libros", item: "https://jesuslopez.com/libros" },
-    { "@type": "ListItem", position: 3, name: "Responsabilidad antes del Éxito", item: "https://jesuslopez.com/libros/responsabilidad-antes-del-exito" },
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://jesuslopezoficial.com" },
+    { "@type": "ListItem", position: 2, name: "Libros", item: "https://jesuslopezoficial.com/libros" },
+    { "@type": "ListItem", position: 3, name: "Responsabilidad antes del Éxito", item: "https://jesuslopezoficial.com/libros/responsabilidad-antes-del-exito" },
   ],
 };
 

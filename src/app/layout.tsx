@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     "Jesus López",
     "responsabilidad antes del exito",
   ],
-  authors: [{ name: "Jesus López", url: "https://jesuslopez.com" }],
+  authors: [{ name: "Jesus López", url: "https://jesuslopezoficial.com" }],
   creator: "Jesus López",
   publisher: "Jesus López",
-  metadataBase: new URL("https://jesuslopez.com"),
+  metadataBase: new URL("https://jesuslopezoficial.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_MX",
     alternateLocale: "en_US",
-    url: "https://jesuslopez.com",
+    url: "https://jesuslopezoficial.com",
     siteName: "Jesus López",
     title: "Jesus López — Especialista en Transformación Masculina",
     description:
@@ -76,14 +76,14 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://jesuslopez.com/#person",
+  "@id": "https://jesuslopezoficial.com/#person",
   name: "Jesus López",
   alternateName: ["Jesus Lopez", "Jesus López Oficial"],
   jobTitle: "Especialista en Transformación Masculina",
   description:
     "Jesus López es especialista en transformación masculina, autor del libro 'Responsabilidad antes del Éxito' y coach que ayuda a hombres a mejorar su imagen, disciplina y mentalidad.",
-  url: "https://jesuslopez.com",
-  image: "https://jesuslopez.com/jesus-lopez.jpg",
+  url: "https://jesuslopezoficial.com",
+  image: "https://jesuslopezoficial.com/jesus-lopez.jpg",
   sameAs: [
     "https://www.instagram.com/101mobilebarbershop",
     "https://www.tiktok.com/@101mobilebarbershop",
@@ -108,11 +108,11 @@ const personSchema = {
   worksFor: {
     "@type": "Organization",
     name: "Jesus López — Transformación Masculina",
-    url: "https://jesuslopez.com",
+    url: "https://jesuslopezoficial.com",
   },
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://jesuslopez.com",
+    "@id": "https://jesuslopezoficial.com",
   },
   interactionStatistic: [
     {
@@ -133,17 +133,17 @@ const personSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://jesuslopez.com/#website",
+  "@id": "https://jesuslopezoficial.com/#website",
   name: "Jesus López",
-  url: "https://jesuslopez.com",
+  url: "https://jesuslopezoficial.com",
   description: "Sitio oficial de Jesus López — Especialista en Transformación Masculina",
   inLanguage: ["es", "en"],
-  author: { "@id": "https://jesuslopez.com/#person" },
+  author: { "@id": "https://jesuslopezoficial.com/#person" },
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://jesuslopez.com/blog?q={search_term_string}",
+      urlTemplate: "https://jesuslopezoficial.com/blog?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },

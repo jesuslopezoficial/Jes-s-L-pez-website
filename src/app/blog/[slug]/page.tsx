@@ -214,16 +214,16 @@ export default async function ArticlePage({ params }: Props) {
     description: article.excerpt,
     author: {
       "@type": "Person",
-      "@id": "https://jesuslopez.com/#person",
+      "@id": "https://jesuslopezoficial.com/#person",
       name: "Jesus López",
     },
     publisher: {
       "@type": "Person",
       name: "Jesus López",
-      url: "https://jesuslopez.com",
+      url: "https://jesuslopezoficial.com",
     },
     datePublished: article.date,
-    url: `https://jesuslopez.com/blog/${slug}`,
+    url: `https://jesuslopezoficial.com/blog/${slug}`,
     inLanguage: "es",
   };
 
@@ -231,9 +231,9 @@ export default async function ArticlePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://jesuslopez.com" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://jesuslopez.com/blog" },
-      { "@type": "ListItem", position: 3, name: article.title, item: `https://jesuslopez.com/blog/${slug}` },
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://jesuslopezoficial.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://jesuslopezoficial.com/blog" },
+      { "@type": "ListItem", position: 3, name: article.title, item: `https://jesuslopezoficial.com/blog/${slug}` },
     ],
   };
 

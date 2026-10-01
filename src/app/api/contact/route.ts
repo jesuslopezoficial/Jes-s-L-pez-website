@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
       </div>
     </div>
     <div class="footer">
-      Lead recibido desde jesuslopez.com
+      Lead recibido desde jesuslopezoficial.com
     </div>
   </div>
 </body>
@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Jesus López <noreply@jesuslopez.com>",
+        from: "Jesus López <noreply@jesuslopezoficial.com>",
         to: ["jesuslopezcruz3004@gmail.com"],
         subject: `🌟 Nuevo lead: ${nombre} — ${tipo}`,
         html: htmlBody,

@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Cómo contratar a Jesus López para una conferencia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Puedes contactar a Jesus López a través del formulario de contacto en jesuslopez.com, por email a jesuslopezcruz3004@gmail.com o directamente por WhatsApp al +1 209 354 6316.",
+        text: "Puedes contactar a Jesus López a través del formulario de contacto en jesuslopezoficial.com, por email a jesuslopezcruz3004@gmail.com o directamente por WhatsApp al +1 209 354 6316.",
       },
     },
     {

@@ -13,26 +13,26 @@ export const metadata: Metadata = {
 const bookSchema = {
   "@context": "https://schema.org",
   "@type": "Book",
-  "@id": "https://jesuslopez.com/libros/responsabilidad-antes-del-exito#book",
+  "@id": "https://jesuslopezoficial.com/libros/responsabilidad-antes-del-exito#book",
   name: "Responsabilidad antes del Éxito",
   author: {
     "@type": "Person",
-    "@id": "https://jesuslopez.com/#person",
+    "@id": "https://jesuslopezoficial.com/#person",
     name: "Jesus López",
   },
   inLanguage: "es",
   genre: "Self-help / Personal Development",
   description:
     "El libro que destila la filosofía de transformación masculina de Jesus López: por qué la responsabilidad debe ser el primer paso antes de buscar cualquier forma de éxito.",
-  url: "https://jesuslopez.com/libros/responsabilidad-antes-del-exito",
+  url: "https://jesuslopezoficial.com/libros/responsabilidad-antes-del-exito",
 };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://jesuslopez.com" },
-    { "@type": "ListItem", position: 2, name: "Libros", item: "https://jesuslopez.com/libros" },
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://jesuslopezoficial.com" },
+    { "@type": "ListItem", position: 2, name: "Libros", item: "https://jesuslopezoficial.com/libros" },
   ],
 };
 

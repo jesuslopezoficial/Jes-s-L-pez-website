@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "Anthropic-AI", allow: "/" },
       { userAgent: "Cohere-AI", allow: "/" },
     ],
-    sitemap: "https://jesuslopez.com/sitemap.xml",
-    host: "https://jesuslopez.com",
+    sitemap: "https://jesuslopezoficial.com/sitemap.xml",
+    host: "https://jesuslopezoficial.com",
   };
 }

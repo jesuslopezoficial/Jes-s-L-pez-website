@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { articles } from "@/app/blog/page";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://jesuslopez.com";
+  const base = "https://jesuslopezoficial.com";
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [

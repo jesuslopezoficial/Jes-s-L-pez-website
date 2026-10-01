@@ -45,8 +45,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://jesuslopez.com" },
-    { "@type": "ListItem", position: 2, name: "Sobre Mí", item: "https://jesuslopez.com/sobre-mi" },
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://jesuslopezoficial.com" },
+    { "@type": "ListItem", position: 2, name: "Sobre Mí", item: "https://jesuslopezoficial.com/sobre-mi" },
   ],
 };
 
