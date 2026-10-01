@@ -139,6 +139,13 @@ export default function Footer() {
             Especialista en Transformación Masculina
           </p>
         </div>
+
+        <p className="text-[11px] text-[#4b5563] mt-6 leading-relaxed">
+          101 Barber Academy ofrece capacitación educativa independiente. Los
+          programas y certificados de finalización no otorgan una licencia de
+          barbería de California ni sustituyen los requisitos u horas
+          establecidos por el Estado.
+        </p>
       </div>
     </footer>
   );
