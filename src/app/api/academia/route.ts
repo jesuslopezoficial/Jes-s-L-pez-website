@@ -1,29 +1,42 @@
 import { NextRequest, NextResponse } from "next/server";
+import { MASTERCLASS_DATE } from "@/lib/academia";
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
 
-const body = {
-  nombre: formData.get("nombre")?.toString() || "",
-  telefono: formData.get("telefono")?.toString() || "",
-  email: formData.get("email")?.toString() || "",
-  ciudad: formData.get("ciudad")?.toString() || "",
-  nivel: formData.get("nivel")?.toString() || "",
-  objetivo: formData.get("objetivo")?.toString() || "",
-};
-    const {
-      nombre,
-      telefono,
-      email,
-      ciudad,
-      nivel,
-      objetivo,
-    } = body;
+    const body = {
+      nombre: formData.get("nombre")?.toString() || "",
+      telefono: formData.get("telefono")?.toString() || "",
+      email: formData.get("email")?.toString() || "",
+      ciudad: formData.get("ciudad")?.toString() || "",
+      nivel: formData.get("nivel")?.toString() || "",
+      objetivo: formData.get("objetivo")?.toString() || "",
+      privacidad: formData.get("privacidad") === "on",
+      marketing: formData.get("marketing") === "on",
+    };
+
+    const { nombre, telefono, email, ciudad, nivel, objetivo, privacidad, marketing } = body;
 
     if (!nombre || !telefono || !email || !ciudad || !nivel) {
       return NextResponse.json(
         { error: "Campos requeridos faltantes" },
+        { status: 400 }
+      );
+    }
+
+    if (!privacidad) {
+      return NextResponse.json(
+        { error: "Debes aceptar el Aviso de Privacidad" },
         { status: 400 }
       );
     }
@@ -36,6 +49,14 @@ const body = {
         { ok: true, warning: "Email not configured" }
       );
     }
+
+    const safeNombre = escapeHtml(nombre);
+    const safeTelefono = escapeHtml(telefono);
+    const safeEmail = escapeHtml(email);
+    const safeCiudad = escapeHtml(ciudad);
+    const safeNivel = escapeHtml(nivel);
+    const safeObjetivo = objetivo ? escapeHtml(objetivo) : "";
+    const whatsappDigits = telefono.replace(/\D/g, "");
 
     const htmlBody = `
       <!DOCTYPE html>
@@ -62,48 +83,53 @@ const body = {
 
               <p>
                 <strong>Masterclass:</strong><br/>
-                20 de octubre de 2026
+                ${MASTERCLASS_DATE}
               </p>
 
               <p>
                 <strong>Nombre:</strong><br/>
-                ${nombre}
+                ${safeNombre}
               </p>
 
               <p>
                 <strong>Teléfono / WhatsApp:</strong><br/>
-                ${telefono}
+                ${safeTelefono}
               </p>
 
               <p>
                 <strong>Email:</strong><br/>
-                ${email}
+                ${safeEmail}
               </p>
 
               <p>
                 <strong>Ciudad:</strong><br/>
-                ${ciudad}
+                ${safeCiudad}
               </p>
 
               <p>
                 <strong>Nivel:</strong><br/>
-                ${nivel}
+                ${safeNivel}
               </p>
 
               ${
-                objetivo
+                safeObjetivo
                   ? `
                     <p>
                       <strong>Objetivo:</strong><br/>
-                      ${objetivo}
+                      ${safeObjetivo}
                     </p>
                   `
                   : ""
               }
 
+              <p>
+                <strong>Acepta marketing:</strong><br/>
+                ${marketing ? "Sí" : "No"}
+              </p>
+
               <div style="text-align:center;margin-top:30px;">
                 <a
-                  href="https://wa.me/${telefono.replace(/\D/g, "")}"
+                  href="https://wa.me/${whatsappDigits}"
                   style="
                     display:inline-block;
                     background:#C9A227;
@@ -132,14 +158,13 @@ const body = {
 
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
-
       headers: {
         Authorization: `Bearer ${RESEND_API_KEY}`,
         "Content-Type": "application/json",
       },
-
       body: JSON.stringify({
-        from: "noreply@jesuslopezoficial.com",        to: ["jesuslopezcruz3004@gmail.com"],
+        from: "noreply@jesuslopezoficial.com",
+        to: ["jesuslopezcruz3004@gmail.com"],
         subject: `🎓 101 Barber Academy — ${nombre}`,
         html: htmlBody,
         reply_to: email,
@@ -148,7 +173,6 @@ const body = {
 
     if (!resendResponse.ok) {
       const error = await resendResponse.text();
-
       console.error("Resend error:", error);
 
       return NextResponse.json(
@@ -162,7 +186,7 @@ const body = {
 <html>
   <body style="margin:0;padding:0;background:#0b0b0b;font-family:Arial,sans-serif;">
     <div style="max-width:600px;margin:0 auto;padding:30px 20px;">
-      
+
       <div style="background:#C9A227;padding:30px;text-align:center;">
         <div style="font-size:42px;">🎓</div>
         <h1 style="margin:10px 0 5px;color:#000;font-size:30px;">
@@ -175,7 +199,7 @@ const body = {
 
       <div style="background:#111;border:1px solid #C9A227;padding:35px;color:#fff;">
         <p style="font-size:20px;margin-top:0;">
-          Hola <strong>${nombre}</strong>,
+          Hola <strong>${safeNombre}</strong>,
         </p>
 
         <p style="color:#d4d4d4;line-height:1.7;">
@@ -193,7 +217,7 @@ const body = {
           </p>
 
           <p style="font-size:22px;font-weight:bold;margin:0;color:#fff;">
-            20 DE OCTUBRE DE 2026
+            ${MASTERCLASS_DATE.toUpperCase()}
           </p>
 
           <p style="color:#d4d4d4;margin:8px 0 0;">
@@ -224,31 +248,29 @@ const body = {
 </html>
 `;
 
-const studentEmailResponse = await fetch("https://api.resend.com/emails", {
-  method: "POST",
+    const studentEmailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "101 Barber Academy <noreply@jesuslopezoficial.com>",
+        to: [email],
+        subject: "🎓 ¡Tu lugar está reservado! — 101 Barber Academy",
+        html: studentEmailHtml,
+      }),
+    });
 
-  headers: {
-    Authorization: `Bearer ${RESEND_API_KEY}`,
-    "Content-Type": "application/json",
-  },
+    if (!studentEmailResponse.ok) {
+      const studentEmailError = await studentEmailResponse.text();
+      console.error("Student confirmation email error:", studentEmailError);
+    }
 
-  body: JSON.stringify({
-    from: "101 Barber Academy <noreply@jesuslopezoficial.com>",
-    to: [email],
-    subject: "🎓 ¡Tu lugar está reservado! — 101 Barber Academy",
-    html: studentEmailHtml,
-  }),
-});
-
-if (!studentEmailResponse.ok) {
-  const studentEmailError = await studentEmailResponse.text();
-  console.error("Student confirmation email error:", studentEmailError);
-}
     return NextResponse.json({
       ok: true,
       message: "Registro recibido",
     });
-
   } catch (error) {
     console.error("Academia API error:", error);
 

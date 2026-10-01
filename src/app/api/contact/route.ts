@@ -1,5 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -16,6 +25,14 @@ export async function POST(req: NextRequest) {
       console.warn("RESEND_API_KEY not configured — email not sent");
       return NextResponse.json({ ok: true, warning: "Email not configured" });
     }
+
+    const safeNombre = escapeHtml(nombre);
+    const safeEmail = escapeHtml(email);
+    const safeWhatsapp = whatsapp ? escapeHtml(whatsapp) : "";
+    const safeEmpresa = empresa ? escapeHtml(empresa) : "";
+    const safeTipo = escapeHtml(tipo);
+    const safeMensaje = escapeHtml(mensaje);
+    const whatsappDigits = whatsapp ? whatsapp.replace(/\D/g, "") : "";
 
     const htmlBody = `
 <!DOCTYPE html>
@@ -43,24 +60,24 @@ export async function POST(req: NextRequest) {
     <div class="body">
       <div class="field">
         <div class="label">Nombre</div>
-        <div class="value">${nombre}</div>
+        <div class="value">${safeNombre}</div>
       </div>
       <div class="field">
         <div class="label">Email</div>
-        <div class="value"><a href="mailto:${email}" style="color:#C9A227">${email}</a></div>
+        <div class="value"><a href="mailto:${safeEmail}" style="color:#C9A227">${safeEmail}</a></div>
       </div>
-      ${whatsapp ? `<div class="field"><div class="label">WhatsApp</div><div class="value"><a href="https://wa.me/${whatsapp.replace(/\D/g, '')}" style="color:#C9A227">${whatsapp}</a></div></div>` : ""}
-      ${empresa ? `<div class="field"><div class="label">Empresa</div><div class="value">${empresa}</div></div>` : ""}
+      ${safeWhatsapp ? `<div class="field"><div class="label">WhatsApp</div><div class="value"><a href="https://wa.me/${whatsappDigits}" style="color:#C9A227">${safeWhatsapp}</a></div></div>` : ""}
+      ${safeEmpresa ? `<div class="field"><div class="label">Empresa</div><div class="value">${safeEmpresa}</div></div>` : ""}
       <div class="field">
         <div class="label">Tipo de Consulta</div>
-        <div class="value">${tipo}</div>
+        <div class="value">${safeTipo}</div>
       </div>
       <div class="field">
         <div class="label">Mensaje</div>
-        <div class="value message">${mensaje}</div>
+        <div class="value message">${safeMensaje}</div>
       </div>
       <div style="text-align:center;margin-top:24px">
-        ${whatsapp ? `<a href="https://wa.me/${whatsapp.replace(/\D/g, '')}?text=Hola%20${encodeURIComponent(nombre)}%2C%20soy%20Jesus%20L%C3%B3pez" class="cta">Responder por WhatsApp</a>` : `<a href="mailto:${email}" class="cta">Responder por Email</a>`}
+        ${whatsappDigits ? `<a href="https://wa.me/${whatsappDigits}?text=Hola%20${encodeURIComponent(nombre)}%2C%20soy%20Jesus%20L%C3%B3pez" class="cta">Responder por WhatsApp</a>` : `<a href="mailto:${safeEmail}" class="cta">Responder por Email</a>`}
       </div>
     </div>
     <div class="footer">

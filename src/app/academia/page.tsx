@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { MASTERCLASS_DATE } from "@/lib/academia";
 
 export default function AcademiaPage() {
   const [enviado, setEnviado] = useState(false);
@@ -75,7 +76,7 @@ export default function AcademiaPage() {
                 MASTERCLASS GRATUITA EN VIVO
               </p>
               <p className="text-2xl md:text-3xl font-black mt-2">
-                20 DE OCTUBRE DE 2026
+                {MASTERCLASS_DATE.toUpperCase()}
               </p>
             </div>
 
@@ -144,6 +145,72 @@ export default function AcademiaPage() {
           </div>
         </section>
 
+        {/* INSTRUCTOR */}
+        <section className="px-6 py-24">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-[#C9A227] text-sm tracking-[0.3em] font-bold">
+              TU INSTRUCTOR
+            </p>
+
+            <h2 className="text-4xl md:text-6xl font-black mt-4">
+              JESÚS LÓPEZ
+            </h2>
+
+            <h3 className="text-xl md:text-2xl font-bold text-[#C9A227] mt-4">
+              DE EMPEZAR DESDE CERO A CONSTRUIR MI PROPIO CAMINO
+            </h3>
+
+            <div className="mt-8 space-y-5 text-[#bdbdbd] text-lg leading-relaxed">
+              <p>
+                Mi camino en la barbería no comenzó dentro de una gran
+                barbería. Comenzó después de años trabajando en el campo.
+              </p>
+
+              <p>
+                Cuando decidí aprender este oficio, también tuve que comenzar
+                desde cero: aprender, practicar, equivocarme, completar mis
+                horas, prepararme para obtener mi licencia y poco a poco
+                construir una clientela.
+              </p>
+
+              <p>
+                Después llegaron los servicios a domicilio y más adelante
+                convertí una idea en{" "}
+                <strong className="text-white">
+                  101 Mobile Barber Shop
+                </strong>.
+              </p>
+
+              <p>
+                Por eso cuando enseño barbería no quiero enseñarte solamente a
+                mover una máquina. Quiero ayudarte a comprender el oficio,
+                evitar algunos de los errores que yo cometí y desarrollar una
+                base que puedas seguir perfeccionando.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-[#C9A227] pl-6 mt-10">
+              <p className="text-2xl font-black">
+                UNA HABILIDAD PUEDE CONVERTIRSE EN UNA PROFESIÓN.
+              </p>
+              <p className="text-[#C9A227] text-xl font-black mt-2">
+                Y UNA PROFESIÓN BIEN CONSTRUIDA PUEDE CONVERTIRSE EN ALGO
+                MUCHO MÁS GRANDE.
+              </p>
+            </div>
+
+            <p className="mt-8 font-bold">
+              Jesús López
+              <br />
+              <span className="text-[#a3a3a3] font-normal">
+                Fundador — 101 Mobile Barber Shop
+                <br />
+                Barbero profesional • Empresario • Instructor
+              </span>
+            </p>
+          </div>
+        </section>
+
         {/* MASTERCLASS */}
         <section className="px-6 py-24 bg-[#0b0b0b]">
           <div className="max-w-5xl mx-auto">
@@ -188,7 +255,7 @@ export default function AcademiaPage() {
 
             <div className="text-center mt-10">
               <p className="font-black text-xl">
-                20 DE OCTUBRE DE 2026 • EN VIVO
+                {MASTERCLASS_DATE.toUpperCase()} • EN VIVO
               </p>
 
               <a
@@ -221,10 +288,10 @@ export default function AcademiaPage() {
 
             <div className="grid lg:grid-cols-2 gap-8">
 
-              {/* FOUNDATION */}
+              {/* START */}
               <div className="border border-[#C9A227]/50 bg-[#0b0b0b] p-8 md:p-10">
                 <p className="text-[#C9A227] text-sm tracking-[0.25em] font-bold">
-                  01 — 101 FOUNDATION
+                  01 — 101 START
                 </p>
 
                 <h3 className="text-3xl md:text-4xl font-black mt-3">
@@ -241,6 +308,25 @@ export default function AcademiaPage() {
                   <span className="text-[#C9A227]">
                     Empezamos desde el principio.
                   </span>
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 mt-7 text-sm">
+                  <div className="border border-white/10 bg-black p-3">
+                    <p className="text-[#777]">Duración</p>
+                    <p className="font-bold">5 semanas</p>
+                  </div>
+                  <div className="border border-white/10 bg-black p-3">
+                    <p className="text-[#777]">Clases</p>
+                    <p className="font-bold">19 en vivo + 1 Skills Day</p>
+                  </div>
+                  <div className="border border-white/10 bg-black p-3 col-span-2">
+                    <p className="text-[#777]">Cupo</p>
+                    <p className="font-bold">Máximo 20 alumnos</p>
+                  </div>
+                </div>
+
+                <p className="text-[#C9A227] text-sm font-bold mt-4">
+                  🎁 Los primeros 10 en inscribirse reciben el 101 Founders Kit
                 </p>
 
                 <div className="mt-8 space-y-3 text-[#d4d4d4]">
@@ -301,6 +387,31 @@ export default function AcademiaPage() {
                   Aquí trabajamos sobre lo que ya sabes para ayudarte a
                   identificar y corregir los detalles que están afectando tus
                   resultados.
+                </p>
+
+                <p className="text-[#a3a3a3] text-sm mt-3">
+                  No necesitas haber tomado 101 START — si ya cortas, puedes
+                  inscribirte directo a 101 PRO.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 mt-7 text-sm">
+                  <div className="border border-white/10 bg-black p-3">
+                    <p className="text-[#777]">Duración</p>
+                    <p className="font-bold">4 semanas</p>
+                  </div>
+                  <div className="border border-white/10 bg-black p-3">
+                    <p className="text-[#777]">Clases</p>
+                    <p className="font-bold">9 en vivo + 1 Skills Day</p>
+                  </div>
+                  <div className="border border-white/10 bg-black p-3 col-span-2">
+                    <p className="text-[#777]">Cupo</p>
+                    <p className="font-bold">Máximo 15 alumnos</p>
+                  </div>
+                </div>
+
+                <p className="text-[#C9A227] text-sm font-bold mt-4">
+                  🎁 Los primeros 5 en inscribirse reciben una Revisión
+                  Privada de Corte
                 </p>
 
                 <div className="mt-8 space-y-3 text-[#d4d4d4]">
@@ -401,72 +512,6 @@ export default function AcademiaPage() {
           </div>
         </section>
 
-        {/* INSTRUCTOR */}
-        <section className="px-6 py-24">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-[#C9A227] text-sm tracking-[0.3em] font-bold">
-              TU INSTRUCTOR
-            </p>
-
-            <h2 className="text-4xl md:text-6xl font-black mt-4">
-              JESÚS LÓPEZ
-            </h2>
-
-            <h3 className="text-xl md:text-2xl font-bold text-[#C9A227] mt-4">
-              DE EMPEZAR DESDE CERO A CONSTRUIR MI PROPIO CAMINO
-            </h3>
-
-            <div className="mt-8 space-y-5 text-[#bdbdbd] text-lg leading-relaxed">
-              <p>
-                Mi camino en la barbería no comenzó dentro de una gran
-                barbería. Comenzó después de años trabajando en el campo.
-              </p>
-
-              <p>
-                Cuando decidí aprender este oficio, también tuve que comenzar
-                desde cero: aprender, practicar, equivocarme, completar mis
-                horas, prepararme para obtener mi licencia y poco a poco
-                construir una clientela.
-              </p>
-
-              <p>
-                Después llegaron los servicios a domicilio y más adelante
-                convertí una idea en{" "}
-                <strong className="text-white">
-                  101 Mobile Barber Shop
-                </strong>.
-              </p>
-
-              <p>
-                Por eso cuando enseño barbería no quiero enseñarte solamente a
-                mover una máquina. Quiero ayudarte a comprender el oficio,
-                evitar algunos de los errores que yo cometí y desarrollar una
-                base que puedas seguir perfeccionando.
-              </p>
-            </div>
-
-            <div className="border-l-4 border-[#C9A227] pl-6 mt-10">
-              <p className="text-2xl font-black">
-                UNA HABILIDAD PUEDE CONVERTIRSE EN UNA PROFESIÓN.
-              </p>
-              <p className="text-[#C9A227] text-xl font-black mt-2">
-                Y UNA PROFESIÓN BIEN CONSTRUIDA PUEDE CONVERTIRSE EN ALGO
-                MUCHO MÁS GRANDE.
-              </p>
-            </div>
-
-            <p className="mt-8 font-bold">
-              Jesús López
-              <br />
-              <span className="text-[#a3a3a3] font-normal">
-                Fundador — 101 Mobile Barber Shop
-                <br />
-                Barbero profesional • Empresario • Instructor
-              </span>
-            </p>
-          </div>
-        </section>
-
         {/* VISIÓN */}
         <section className="px-6 py-24 bg-[#0b0b0b]">
           <div className="max-w-5xl mx-auto text-center">
@@ -524,7 +569,7 @@ export default function AcademiaPage() {
 
             <div className="max-w-3xl mx-auto mt-14 space-y-5">
               <div className="border border-[#C9A227]/50 p-7 bg-[#0b0b0b]">
-                <p className="text-[#C9A227] font-black">101 FOUNDATION</p>
+                <p className="text-[#C9A227] font-black">101 START</p>
                 <p className="text-2xl font-black mt-2">
                   CONSTRUYE TU BASE
                 </p>
@@ -565,6 +610,54 @@ export default function AcademiaPage() {
           </div>
         </section>
 
+        {/* SKILLS DAY */}
+        <section className="px-6 py-24 bg-[#0b0b0b]">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-[#C9A227] text-sm tracking-[0.3em] font-bold">
+              CÓMO TERMINA CADA PROGRAMA
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-black mt-4">
+              EL SKILLS DAY
+            </h2>
+
+            <p className="text-[#bdbdbd] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+              101 START y 101 PRO cierran con un Skills Day: una evaluación en
+              vivo de lo que aprendiste, con reconocimiento al terminar.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 mt-12 text-left max-w-2xl mx-auto">
+              <div className="border border-white/10 bg-black p-6">
+                <p className="text-[#C9A227] font-black text-sm tracking-widest">
+                  SI PUEDES ASISTIR EN PERSONA
+                </p>
+                <p className="text-[#a3a3a3] mt-3 leading-relaxed">
+                  El Skills Day se realiza de forma presencial.
+                </p>
+              </div>
+              <div className="border border-white/10 bg-black p-6">
+                <p className="text-[#C9A227] font-black text-sm tracking-widest">
+                  SI NO PUEDES ASISTIR
+                </p>
+                <p className="text-[#a3a3a3] mt-3 leading-relaxed">
+                  También está disponible en vivo online, y tu certificación
+                  se envía por correo.
+                </p>
+              </div>
+            </div>
+
+            <div className="max-w-2xl mx-auto mt-10 border border-white/15 bg-black p-6 text-left">
+              <p className="text-[#a3a3a3] text-sm leading-relaxed">
+                <strong className="text-white">Nota importante:</strong> 101
+                Barber Academy ofrece capacitación educativa independiente.
+                Los programas y certificados de finalización no otorgan una
+                licencia de barbería de California ni sustituyen los
+                requisitos u horas establecidos por el Estado.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="px-6 py-24 bg-[#0b0b0b]">
           <div className="max-w-4xl mx-auto">
@@ -582,11 +675,15 @@ export default function AcademiaPage() {
               {[
                 [
                   "¿Necesito experiencia para participar?",
-                  "No. Si nunca has utilizado una máquina, 101 Foundation está diseñado para comenzar desde las bases.",
+                  "No. Si nunca has utilizado una máquina, 101 START está diseñado para comenzar desde las bases.",
                 ],
                 [
                   "¿Y si ya soy barbero?",
-                  "101 Pro está pensado para quienes ya cortan y quieren perfeccionar técnica, fades, transiciones, terminaciones y consistencia.",
+                  "Puedes inscribirte directo a 101 PRO sin necesidad de tomar 101 START primero. PRO está pensado para quienes ya cortan y quieren perfeccionar técnica, fades, transiciones, terminaciones y consistencia.",
+                ],
+                [
+                  "¿Qué es el Skills Day y obtengo una licencia de barbería?",
+                  "El Skills Day es la evaluación final de cada programa, presencial o en vivo online según tu disponibilidad. Al terminar recibes tu certificación por correo, pero 101 Barber Academy es capacitación educativa independiente: no otorga una licencia de barbería de California ni sustituye los requisitos u horas establecidos por el Estado.",
                 ],
                 [
                   "¿Necesito tener mis propias herramientas?",
@@ -594,7 +691,7 @@ export default function AcademiaPage() {
                 ],
                 [
                   "¿La Masterclass tiene costo?",
-                  "No. La Masterclass del 20 de octubre de 2026 es gratuita.",
+                  `No. La Masterclass del ${MASTERCLASS_DATE} es gratuita.`,
                 ],
                 [
                   "¿La Masterclass será presencial?",
@@ -656,7 +753,7 @@ export default function AcademiaPage() {
                 </h3>
 
                 <p className="text-[#a3a3a3] mt-2">
-                  20 de octubre de 2026 • En vivo
+                  {MASTERCLASS_DATE} • En vivo
                 </p>
               </div>
 
@@ -818,7 +915,7 @@ export default function AcademiaPage() {
                   </p>
 
                   <p className="font-bold mt-4">
-                    20 DE OCTUBRE DE 2026 • EN VIVO
+                    {MASTERCLASS_DATE.toUpperCase()} • EN VIVO
                   </p>
                 </div>
               )}
